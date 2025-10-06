@@ -13,7 +13,7 @@ import postbound as pb
 from postbound.optimizer import presets
 
 # Setup: we optimize queries from the Join Order Benchmark on a Postgres database
-postgres_db = pb.postgres.connect()
+postgres_db = pb.postgres.connect(connect_string="dbname=stats user=postbound host=localhost")
 job_workload = pb.workloads.job()
 
 # Configure the optimization pipeline for UES

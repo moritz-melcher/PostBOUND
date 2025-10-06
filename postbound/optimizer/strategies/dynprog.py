@@ -1290,7 +1290,7 @@ class PostgresDynProg(PlanEnumerator):
         )
         if not join_predicates:
             # TODO: should we rather raise an error here?
-            return
+            return []
 
         match join_predicates:
             case CompoundPredicate(op, children) if op == CompoundOperator.And:
